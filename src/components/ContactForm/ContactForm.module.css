@@ -1,0 +1,38 @@
+.form_grid {
+  grid-area: form;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  border-radius: 13px;
+  margin-top: 25px;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.frame {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #1a1a1a;
+}
+
+.input {
+  border-radius: 13px;
+  padding: 5px;
+  height: 35px;
+  width: 100%;
+  margin-bottom: 15px;
+}

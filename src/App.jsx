@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLoading } from './redux/contactsSlice';
+import { useEffect } from 'react';
+import { fetchContacts } from './redux/contactsOps';
+import { GiCandlestickPhone } from "react-icons/gi";
+import { DNA } from 'react-loader-spinner';
+import ContactForm from './components/ContactForm/ContactForm'
+import SearchBox from './components/SearchBox/SearchBox';
+import ContactList from './components/ContactList/ContactList';
+import s from './App.module.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+
+  const dispatch = useDispatch();
+  const loading = useSelector(selectLoading);
+  
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+     <div className={s.wrapper}>
+      <div className={s.logo}>
+        <GiCandlestickPhone className={s.icon} />
+        <h1 className={s.title}>Phonebook</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <ContactForm />
+      <SearchBox />
+      {loading && (
+        <div className={s.loaderAdjustment}>
+  <DNA
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="dna-loading"
+  wrapperStyle={{}}
+  wrapperClass="dna-wrapper"
+  />
+        </div>
+      )}
+      <ContactList />
+    </div>
   )
 }
 

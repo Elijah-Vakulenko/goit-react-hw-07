@@ -1,0 +1,40 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 25px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  padding: 15px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.delBtn {
+  width: 150px;
+  border-radius: 13px;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.frame {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #1a1a1a;
+}
