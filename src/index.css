@@ -75,3 +75,7 @@ textarea {
   font-family: "Underwood";
   src: url(./font/underwood_champion.ttf);
 }
+
+label {
+  font-size: 25px;
+}

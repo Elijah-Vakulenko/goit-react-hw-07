@@ -4,7 +4,7 @@ import { selectLoading } from './redux/contactsSlice';
 import { useEffect } from 'react';
 import { fetchContacts } from './redux/contactsOps';
 import { GiCandlestickPhone } from "react-icons/gi";
-import { DNA } from 'react-loader-spinner';
+import { InfinitySpin } from 'react-loader-spinner';
 import ContactForm from './components/ContactForm/ContactForm'
 import SearchBox from './components/SearchBox/SearchBox';
 import ContactList from './components/ContactList/ContactList';
@@ -32,13 +32,11 @@ const App = () => {
       <SearchBox />
       {loading && (
         <div className={s.loaderAdjustment}>
-  <DNA
+  <InfinitySpin
   visible={true}
-  height="80"
-  width="80"
-  ariaLabel="dna-loading"
-  wrapperStyle={{}}
-  wrapperClass="dna-wrapper"
+  width="200"
+  color="#353b3b"
+  ariaLabel="infinity-spin-loading"
   />
         </div>
       )}
