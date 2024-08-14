@@ -20,7 +20,7 @@ const slice = createSlice({
         state.items.push(action.payload);
       })
      .addCase(deleteContact.fulfilled, (state, action) => {
-        state.items = state.items.filter((item) => item.id !== action.payload);
+        state.items = state.items.filter((item) => item.id !== action.payload.id);
       })
       .addMatcher(
         isAnyOf(
