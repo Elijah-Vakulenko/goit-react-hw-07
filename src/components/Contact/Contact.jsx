@@ -21,7 +21,7 @@ const Contact = ({name, number, id}) => {
                 <p>{number}</p>
               </div>
           </div>
-          <button className={s.delBtn} type="button" onClick={() => dispatch(deleteContact(id))}><div className={s.frame}>Delete</div></button>
+          <button className={s.delBtn} type="button" onClick={() => dispatch(deleteContact(id))}>Delete</button>
     </div>
   )
 }

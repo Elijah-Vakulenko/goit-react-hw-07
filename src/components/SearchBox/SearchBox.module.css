@@ -1,6 +1,6 @@
 .searchBox {
   grid-area: search;
-  border: 2px solid white;
+  border: 2px solid #625332;
   border-radius: 12px;
   padding: 20px;
 }
